@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: dockerfile
+    deploy:
+      mode: replicated
+      replicas: 2
+    ports:
+      - "9091-9092:9091"
+    restart: always
+
+networks:
+  default:
+    driver: bridge

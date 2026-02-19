@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  discovery:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: discovery
+    ports:
+      - "8761:8761"
+    restart: always
+
+networks:
+  default:
+    driver: bridge
